@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - School Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="your-logo.png" alt="School Logo" class="logo" />
+      <h1>Welcome to Our School</h1>
+      <div class="menu-button" onclick="toggleDropdown()">
+        <i class="fas fa-bars"></i>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="about.html">About</a>
+          <a href="index.html">Curriculum</a>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <h2>About Our Teachers</h2>
+      <div class="teacher">
+        <img src="teacher1.jpg" alt="Teacher 1" />
+        <div>
+          <h3>Teacher 1</h3>
+          <p>
+            Biography of Teacher 1. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+          </p>
+        </div>
+      </div>
+      <div class="teacher">
+        <img src="teacher2.jpg" alt="Teacher 2" />
+        <div>
+          <h3>Teacher 2</h3>
+          <p>
+            Biography of Teacher 2. Cras pulvinar, sapien id vehicula aliquet,
+            diam velit elementum orci, non ultricies metus arcu vel arcu.
+          </p>
+        </div>
+      </div>
+      <div class="teacher">
+        <img src="teacher3.jpg" alt="Teacher 3" />
+        <div>
+          <h3>Teacher 3</h3>
+          <p>
+            Biography of Teacher 3. Nulla facilisi. Ut fringilla. Suspendisse
+            potenti. Nunc feugiat mi a tellus consequat imperdiet.
+          </p>
+        </div>
+      </div>
+      <div class="teacher">
+        <img src="teacher4.jpg" alt="Teacher 4" />
+        <div>
+          <h3>Teacher 4</h3>
+          <p>
+            Biography of Teacher 4. Vestibulum sapien. Proin quam. Etiam
+            ultrices. Suspendisse in justo eu magna luctus suscipit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright 2024</p>
+    </footer>
+    <script>
+      function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.matches(".menu-button *")
+        ) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
