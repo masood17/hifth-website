@@ -14,8 +14,8 @@
   <body>
     <header>
       <img src="your-logo.png" alt="School Logo" class="logo" />
-      <h1>Welcome to Our School</h1>
-      <div class="menu-button" onclick="toggleDropdown()">
+      <h1>Qira'at Al-Qur'an Institute</h1>
+      <div class="menu-button" onclick="toggleDropdown()" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
         <div id="myDropdown" class="dropdown-content">
           <a href="about.html">About</a>
@@ -68,7 +68,6 @@
       function toggleDropdown() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
-      // Close the dropdown menu if the user clicks outside of it
       window.onclick = function (event) {
         if (
           !event.target.matches(".menu-button") &&

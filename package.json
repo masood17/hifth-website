@@ -4,15 +4,16 @@
     "description": "A template for HTML and CSS",
     "main": "index.html",
     "scripts": {
-      "start": "serve"
+        "start": "serve"
     },
     "keywords": [
-      "html",
-      "css"
+        "html",
+        "css"
     ],
     "author": "Ives van Hoorne",
     "license": "MIT",
     "devDependencies": {
-      "serve": "11.2.0"
+        "firebase-tools": "^13.13.0",
+        "serve": "11.2.0"
     }
-  }
+}

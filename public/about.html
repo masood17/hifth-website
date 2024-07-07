@@ -14,7 +14,7 @@
     <header>
       <img src="your-logo.png" alt="School Logo" class="logo" />
       <h1>Welcome to Our School</h1>
-      <div class="menu-button" onclick="toggleDropdown()">
+      <div class="menu-button" onclick="toggleDropdown()" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
         <div id="myDropdown" class="dropdown-content">
           <a href="about.html">About</a>
@@ -25,7 +25,7 @@
     <div class="container">
       <h2>About Our Teachers</h2>
       <div class="teacher">
-        <img src="teacher1.jpg" alt="Teacher 1" />
+        <img src="https://randompicturegenerator.com/img/people-generator/g482351495b890bc17fd5702f0c5feddeee3cf78bdfd61305cf29a144e45a9ed5bdf3463a54deb2db58537db6889f510c_640.jpg" alt="Teacher 1" />
         <div>
           <h3>Teacher 1</h3>
           <p>
@@ -72,7 +72,6 @@
       function toggleDropdown() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
-      // Close the dropdown menu if the user clicks outside of it
       window.onclick = function (event) {
         if (
           !event.target.matches(".menu-button") &&
