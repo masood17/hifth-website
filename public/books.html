@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books - Quran Memorization School</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-container">
+    <div class="content-wrap">
+      <header>
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <!-- Logo placeholder -->
+              QM School
+            </div>
+            <nav>
+              <div class="menu-toggle">☰</div>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="books.html">Books</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="books" class="books container">
+          <h1>Recommended Books</h1>
+          <ul id="reading-list">
+            <!-- Reading list will be populated by JavaScript -->
+          </ul>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <!-- Copy footer from index.html -->
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector("nav ul");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+
+      // Sample data for required reading
+      const requiredReading = [
+        {
+          title: "Fundamentals of Tajweed",
+          description: "A comprehensive guide to proper Quranic recitation.",
+          pdfLink: "#",
+        },
+        {
+          title: "History of Quran Compilation",
+          description:
+            "Learn about the preservation of the Quran through history.",
+          pdfLink: "#",
+        },
+        {
+          title: "Arabic Grammar for Quran Students",
+          description:
+            "Essential Arabic grammar rules for understanding the Quran.",
+          pdfLink: "#",
+        },
+      ];
+
+      // Populate the reading list
+      const readingList = document.getElementById("reading-list");
+      requiredReading.forEach((book) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <h3>${book.title}</h3>
+          <p>${book.description}</p>
+          <a href="${book.pdfLink}" target="_blank">Download PDF</a>
+        `;
+        readingList.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
