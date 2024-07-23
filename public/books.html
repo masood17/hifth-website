@@ -30,12 +30,11 @@
       </header>
 
       <main>
-        <section id="books" class="books container">
-          <h1>Recommended Books</h1>
-          <ul id="reading-list">
-            <!-- Reading list will be populated by JavaScript -->
-          </ul>
-        </section>
+        <section>
+          <div id="bookContainer" class="book-container">
+            <!-- Book cards will be dynamically inserted here -->
+        </div>
+      </section>
       </main>
     </div>
     <footer>
@@ -51,38 +50,57 @@
         navMenu.classList.toggle("show");
       });
 
-      // Sample data for required reading
-      const requiredReading = [
-        {
-          title: "Fundamentals of Tajweed",
-          description: "A comprehensive guide to proper Quranic recitation.",
-          pdfLink: "#",
-        },
-        {
-          title: "History of Quran Compilation",
-          description:
-            "Learn about the preservation of the Quran through history.",
-          pdfLink: "#",
-        },
-        {
-          title: "Arabic Grammar for Quran Students",
-          description:
-            "Essential Arabic grammar rules for understanding the Quran.",
-          pdfLink: "#",
-        },
-      ];
+      // book population
 
-      // Populate the reading list
-      const readingList = document.getElementById("reading-list");
-      requiredReading.forEach((book) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <h3>${book.title}</h3>
-          <p>${book.description}</p>
-          <a href="${book.pdfLink}" target="_blank">Download PDF</a>
-        `;
-        readingList.appendChild(li);
-      });
+      const books = [
+            {
+                title: "A Du'a Away: A Companion Journal",
+                coverImage: "https://islam786books.com/images/Tuhfat_al_Atfal_2nd_Edition.jpg",
+                type: "YAQEEN BOOK",
+                detailLink: "/book-details/a-dua-away"
+            },
+            {
+                title: "40 Prophetic Hadiths on Health & Well-being",
+                coverImage: "https://www.al-tanzil.co.za/wp-content/uploads/albayaan-cover-734x1024.jpeg",
+                type: "YAQEEN BOOK",
+                detailLink: "/book-details/40-prophetic-hadiths"
+            },
+            {
+                title: "Qur'an 30 for 30: Thematic Tafsir",
+                coverImage: "/path/to/quran-30-for-30-cover.jpg",
+                type: "YAQEEN BOOK",
+                detailLink: "/book-details/quran-30-for-30"
+            },
+            {
+                title: "A Du'a a Day: Prophetic Prayers for Ramadan",
+                coverImage: "/path/to/dua-a-day-cover.jpg",
+                type: "YAQEEN BOOK",
+                detailLink: "/book-details/a-dua-a-day"
+            }
+        ];
+
+        function createBookCard(book) {
+            return `
+                <div class="book-card">
+                    <a href="${book.detailLink}" class="book-cover-link">
+                        <img src="${book.coverImage}" alt="${book.title}" class="book-cover">
+                        <span class="book-type">${book.type}</span>
+                    </a>
+                    <h3 class="book-title">
+                        <a href="${book.detailLink}">${book.title}</a>
+                    </h3>
+                </div>
+            `;
+        }
+
+        // Populate the reading list with book cards
+        function renderBookCards() {
+            const bookContainer = document.getElementById('bookContainer');
+            bookContainer.innerHTML = books.map(createBookCard).join('');
+        }
+
+        // Call the render function when the page loads
+        window.onload = renderBookCards;
     </script>
   </body>
 </html>
