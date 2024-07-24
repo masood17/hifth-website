@@ -97,6 +97,7 @@
       display: block;
       font-size: 1.5rem;
       cursor: pointer;
+      z-index: 1000; 
     }
     nav ul {
       display: none;
@@ -107,6 +108,7 @@
       background-color: var(--primary-color);
       flex-direction: column;
       padding: 20px 0;
+      z-index: 999;
     }
     nav ul.show {
       display: flex;
@@ -136,6 +138,7 @@
   }
   
   .cta-button {
+    display: inline-block;
     background-color: var(--secondary-color);
     color: var(--primary-color);
     padding: 10px 20px;
@@ -365,14 +368,13 @@
   /* Course cards styles */
   .course-cards {
     display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-between;
-    gap: 20px;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    /* gap: 20px; */
   }
   
   .course-card {
-    flex-basis: calc(50% - 20px); /* Changed to 50% for larger cards */
-    max-width: calc(50% - 20px);
+  
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -380,6 +382,8 @@
     margin-bottom: 10px;
     overflow: auto; /* Added to handle overflow */
   }
+  
+
   
   .course-card h2 {
     color: var(--primary-color);
