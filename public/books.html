@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books - Qira'at al-Qur'an Institute</title>
+    <link rel="icon" type="image/x-icon" href="./IMG-20240516-WA0016.ico">
+
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.io" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
   </head>
   <body class="page-container">
     <div class="content-wrap">
@@ -13,15 +18,22 @@
           <div class="header-content">
             <div class="logo">
               <!-- Logo placeholder -->
-              QM School
+              <img
+                src="IMG-20240516-WA0016.jpg"
+                alt="school logo"
+              />
             </div>
+            <div class="logo-h1">
+              <h3>Qira'at al-Quran Institute</h3>
+            </div>
+
             <nav>
               <div class="menu-toggle">☰</div>
               <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://wa.me/27685713250">Contact</a></li>
                 <li><a href="books.html">Books</a></li>
               </ul>
             </nav>
@@ -38,7 +50,20 @@
       </main>
     </div>
     <footer>
-      <!-- Copy footer from index.html -->
+      <p>Connect with us:</p>
+      <a href="https://www.instagram.com/qiraatalquran_/" target="_blank"
+        ><img src="./social-icons/icons8-instagram-color-32.png" alt="Instagram" class="social-icon"
+      /></a>
+      <a href="https://www.tiktok.com/@qiraat.alquran.in" target="_blank"
+        ><img src="./social-icons/icons8-tiktok-ios-17-filled-32.png" alt="Twitter" class="social-icon"
+      /></a>
+      <a href="https://wa.me/27685713250" target="_blank" rel="noopener noreferrer"><img src="./social-icons/icons8-whatsapp-color-32.png" alt="Whatsapp" class="social-icon"
+        /></a>
+      
+      <p>Contact: (+27) 68 571 3250 | qiraatalquraninstitute@gmail.com</p>
+      <div class="container">
+        <p>&copy; <span id="current-year"></span> Qira'at al-Qur'an Institute. All rights reserved.</p>
+      </div>
     </footer>
 
     <script>
@@ -100,13 +125,14 @@
         function createBookCard(book) {
             return `
                 <div class="book-card">
-                    <a href="${book.detailLink}" class="book-cover-link">
+                    <div  class="book-cover-link">
                         <img src="${book.coverImage}" alt="${book.title}" class="book-cover">
                         <span class="book-type">${book.type}</span>
-                    </a>
+                    </div>
                     <h3 class="book-title">
-                        <a href="${book.detailLink}">${book.title}</a>
+                        <div >${book.title}</div>
                     </h3>
+                    <a href="${book.detailLink}"" class="cta-button">download</a>
                 </div>
             `;
         }
@@ -119,6 +145,14 @@
 
         // Call the render function when the page loads
         window.onload = renderBookCards;
+        //copyright year function
+      document.addEventListener("DOMContentLoaded", function(){const currentyear = new Date().getFullYear();
+document.getElementById("current-year").textContent = currentyear;
+      });
     </script>
+   
+    
+     <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"></script>
+   
   </body>
 </html>
